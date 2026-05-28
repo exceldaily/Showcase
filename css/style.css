@@ -262,15 +262,10 @@ input, select, textarea { font-family: var(--font); }
   position: relative;
   overflow: hidden;
   background-color: #0b0b0b;
-  background-image:
-    radial-gradient(ellipse 80% 60% at 70% 50%, rgba(160, 10, 28, 0.18) 0%, transparent 70%),
-    repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 40px,
-      rgba(255,255,255,0.015) 40px,
-      rgba(255,255,255,0.015) 41px
-    );
+  background-image: url('../hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .hero-overlay {
