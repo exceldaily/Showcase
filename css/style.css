@@ -274,9 +274,9 @@ input, select, textarea { font-family: var(--font); }
   background: linear-gradient(
     to right,
     rgba(0,0,0,0.42) 0%,
-    rgba(0,0,0,0.50) 42%,
-    rgba(0,0,0,0.84) 56%,
-    rgba(0,0,0,0.90) 100%
+    rgba(0,0,0,0.48) 52%,
+    rgba(0,0,0,0.86) 62%,
+    rgba(0,0,0,0.92) 100%
   );
 }
 
@@ -285,7 +285,7 @@ input, select, textarea { font-family: var(--font); }
   z-index: 1;
   padding-top: 110px;
   padding-bottom: 80px;
-  width: 48%;
+  width: 38%;
   margin-left: auto;
 }
 
