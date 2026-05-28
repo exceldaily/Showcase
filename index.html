@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Palmetto State Automotive — Trusted auto repair in Anderson, SC. Brakes, oil changes, AC repair, engine diagnostics & more. Call 864-328-9169.">
+  <meta name="keywords" content="auto repair Anderson SC, mechanic Anderson SC, brake repair, oil change, AC repair, engine repair, Palmetto State Automotive">
+  <title>Palmetto State Automotive | Auto Repair — Anderson, SC</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-logo">
+        <img src="images/palmetto-logo.png" alt="Palmetto State Automotive" class="logo-img" onerror="this.style.display='none'">
+        <div class="logo-text">
+          <span class="logo-top">Palmetto State</span>
+          <span class="logo-bottom">Automotive</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#appointment" class="btn-nav">Book Appointment</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile overlay -->
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <i class="fas fa-map-marker-alt"></i> Anderson, SC's Trusted Auto Shop
+      </div>
+      <h1 class="hero-title">
+        We Keep Your Vehicle<br>
+        <span class="accent">Running Right.</span>
+      </h1>
+      <p class="hero-subtitle">
+        Expert mechanical repair, honest pricing, and fast turnaround for all makes and models. Done right the first time — guaranteed.
+      </p>
+      <div class="hero-cta">
+        <a href="#appointment" class="btn btn-primary btn-lg">
+          <i class="fas fa-calendar-check"></i> Schedule Appointment
+        </a>
+        <a href="tel:8643289169" class="btn btn-outline btn-lg">
+          <i class="fas fa-phone"></i> 864-328-9169
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">4.9 <i class="fas fa-star"></i></span>
+          <span class="stat-label">Google Rating</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">49+</span>
+          <span class="stat-label">5-Star Reviews</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">10%</span>
+          <span class="stat-label">Military &amp; First Responder Discount</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TRUST BAR
+  ============================================================ -->
+  <div class="trust-bar">
+    <div class="container trust-grid">
+      <div class="trust-item">
+        <i class="fas fa-shield-halved"></i>
+        <div>
+          <strong>Honest Pricing</strong>
+          <span>No hidden fees, ever</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <i class="fas fa-bolt"></i>
+        <div>
+          <strong>Fast Turnaround</strong>
+          <span>Most repairs same day</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <i class="fas fa-wrench"></i>
+        <div>
+          <strong>All Makes &amp; Models</strong>
+          <span>Cars, trucks &amp; fleet</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <i class="fas fa-truck-pickup"></i>
+        <div>
+          <strong>Towing Available</strong>
+          <span>We'll come to you</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SERVICES
+  ============================================================ -->
+  <section class="services section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">What We Do</span>
+        <h2 class="section-title">Full-Service Auto Repair</h2>
+        <p class="section-sub">From routine maintenance to complex engine work, our experienced technicians handle it all with precision and care.</p>
+      </div>
+      <div class="services-grid">
+
+        <div class="service-card fade-in">
+          <div class="service-icon"><i class="fas fa-oil-can"></i></div>
+          <h3>Oil Changes</h3>
+          <p>Conventional, synthetic, and high-mileage oil changes with filter replacement and a complimentary multi-point inspection.</p>
+          <a href="#appointment" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card fade-in">
+          <div class="service-icon"><i class="fas fa-circle-stop"></i></div>
+          <h3>Brake Repair</h3>
+          <p>Full brake system inspection, pad &amp; rotor replacement, brake fluid service, caliper repair, and brake line work.</p>
+          <a href="#appointment" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card fade-in">
+          <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+          <h3>Diagnostics</h3>
+          <p>Advanced computer diagnostics to identify check engine lights, warning codes, sensor failures, and electrical issues.</p>
+          <a href="#appointment" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card fade-in">
+          <div class="service-icon"><i class="fas fa-gears"></i></div>
+          <h3>Engine Repair</h3>
+          <p>Full engine diagnostics, repairs, tune-ups, timing belts, and head gaskets for cars and trucks of all makes and models.</p>
+          <a href="#appointment" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card fade-in">
+          <div class="service-icon"><i class="fas fa-wind"></i></div>
+          <h3>AC Repair</h3>
+          <p>A/C diagnostics, refrigerant recharge, compressor replacement, evaporator repair, and full climate system service.</p>
+          <a href="#appointment" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card fade-in">
+          <div class="service-icon"><i class="fas fa-circle-dot"></i></div>
+          <h3>Tire Services</h3>
+          <p>Tire rotation, balancing, pressure checks, and flat repair to maximize tire life, safety, and fuel efficiency.</p>
+          <a href="#appointment" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card fade-in">
+          <div class="service-icon"><i class="fas fa-car-side"></i></div>
+          <h3>Suspension</h3>
+          <p>Shocks, struts, ball joints, tie rods, sway bars, wheel alignment checks, and full suspension system diagnostics.</p>
+          <a href="#appointment" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card fade-in">
+          <div class="service-icon"><i class="fas fa-battery-full"></i></div>
+          <h3>Battery Service</h3>
+          <p>Battery load testing, replacement, alternator checks, starting system diagnostics, and charging system repair.</p>
+          <a href="#appointment" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-card fade-in">
+          <div class="service-icon"><i class="fas fa-toolbox"></i></div>
+          <h3>General Maintenance</h3>
+          <p>Fluid flushes, filter replacements, belts, hoses, wipers, and all manufacturer-scheduled maintenance services.</p>
+          <a href="#appointment" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DISCOUNT BANNER
+  ============================================================ -->
+  <section class="cta-banner">
+    <div class="container cta-content">
+      <div class="cta-text">
+        <i class="fas fa-star cta-icon"></i>
+        <div>
+          <h2>Military, First Responders &amp; Teachers</h2>
+          <p>We proudly offer a <strong>10% discount</strong> to active and retired military, all first responders, and educators. Thank you for your service.</p>
+        </div>
+      </div>
+      <a href="#appointment" class="btn btn-white btn-lg">Claim Your Discount</a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT
+  ============================================================ -->
+  <section class="about section" id="about">
+    <div class="container about-grid">
+      <div class="about-image fade-in">
+        <div class="about-img-wrap">
+          <!-- Replace with your shop photo or keep the truck photo -->
+          <img src="images/truck.jpg" alt="Palmetto State Automotive Work Truck" loading="lazy"
+               onerror="this.parentElement.classList.add('img-placeholder')">
+          <div class="about-float-card">
+            <div class="float-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <strong>4.9 out of 5</strong>
+            <span>49 verified Google reviews</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-text fade-in">
+        <span class="section-label">About Us</span>
+        <h2>Local. Honest. <span class="accent">Dependable.</span></h2>
+        <p class="about-lead">
+          Palmetto State Automotive is Anderson, SC's trusted full-service auto repair shop. Owner and mechanic Chris Gurley built this business on one promise: treat every customer's vehicle like it's his own.
+        </p>
+        <p>
+          We believe in straight talk — no upselling, no unnecessary repairs, no surprises on your bill. When you bring your vehicle to us, you get experienced hands, honest advice, and quality work backed by our commitment to your complete satisfaction.
+        </p>
+        <div class="about-features">
+          <div class="about-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Hands-on ownership with over a decade of experience</span>
+          </div>
+          <div class="about-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Transparent estimates before any work begins</span>
+          </div>
+          <div class="about-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>All makes, models, trucks, and fleet vehicles welcome</span>
+          </div>
+          <div class="about-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Towing available when you need it most</span>
+          </div>
+        </div>
+        <div class="owner-card">
+          <div class="owner-avatar">CG</div>
+          <div class="owner-info">
+            <strong>Chris Gurley</strong>
+            <span>Owner / Mechanic</span>
+            <a href="tel:8649331950">864-933-1950</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WHY CHOOSE US
+  ============================================================ -->
+  <section class="why-us section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Why Choose Us</span>
+        <h2 class="section-title" style="color:#fff;">The Palmetto Difference</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card fade-in">
+          <div class="why-icon"><i class="fas fa-hand-holding-dollar"></i></div>
+          <h3>Fair &amp; Transparent Pricing</h3>
+          <p>We give you a full estimate before any work starts. No surprise charges, no pressure, no games. Just honest pricing you can actually trust.</p>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-icon"><i class="fas fa-clock"></i></div>
+          <h3>Fast Turnaround</h3>
+          <p>We respect your time. Most repairs are completed the same day so you can get back on the road without waiting days for your vehicle.</p>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-icon"><i class="fas fa-medal"></i></div>
+          <h3>Quality You Can Feel</h3>
+          <p>We use quality parts and stand behind our work. When you drive away from Palmetto State Automotive, you'll know the difference immediately.</p>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-icon"><i class="fas fa-heart"></i></div>
+          <h3>Community First</h3>
+          <p>We're local. We live here, work here, and take genuine pride in serving Anderson, SC and the surrounding communities we call home.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       APPOINTMENT
+  ============================================================ -->
+  <section class="appointment section" id="appointment">
+    <div class="container">
+      <div class="appt-grid">
+
+        <div class="appt-info fade-in">
+          <span class="section-label">Schedule Online</span>
+          <h2>Book Your <span class="accent">Appointment</span></h2>
+          <p>Fill out the form and we'll reach out within one business day to confirm your appointment time. Prefer to call? We're always happy to help.</p>
+
+          <div class="appt-contact-items">
+            <div class="appt-contact-item">
+              <div class="appt-icon"><i class="fas fa-phone"></i></div>
+              <div>
+                <strong>Main Line</strong>
+                <a href="tel:8643289169">864-328-9169</a>
+              </div>
+            </div>
+            <div class="appt-contact-item">
+              <div class="appt-icon"><i class="fas fa-user"></i></div>
+              <div>
+                <strong>Chris (Owner)</strong>
+                <a href="tel:8649331950">864-933-1950</a>
+              </div>
+            </div>
+            <div class="appt-contact-item">
+              <div class="appt-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <strong>Email</strong>
+                <a href="mailto:palmettostateautomotivellc@gmail.com">palmettostateautomotivellc@gmail.com</a>
+              </div>
+            </div>
+            <div class="appt-contact-item">
+              <div class="appt-icon"><i class="fas fa-clock"></i></div>
+              <div>
+                <strong>Hours</strong>
+                <span>Mon–Fri: 8:00 AM – 5:00 PM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="appt-form-wrap fade-in">
+          <!--
+            FORMSPREE SETUP:
+            1. Go to https://formspree.io and create a free account
+            2. Create a new form for palmettostateautomotivellc@gmail.com
+            3. Replace YOUR_FORM_ID below with your actual form ID
+            Example: action="https://formspree.io/f/xabcdefg"
+          -->
+          <form id="appointmentForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div class="form-row two-col">
+              <div class="form-group">
+                <label for="name">Full Name <span class="req">*</span></label>
+                <input type="text" id="name" name="name" placeholder="John Smith" required autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number <span class="req">*</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="864-000-0000" required autocomplete="tel">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address <span class="req">*</span></label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
+            </div>
+            <div class="form-row three-col">
+              <div class="form-group">
+                <label for="year">Year</label>
+                <input type="text" id="year" name="vehicle_year" placeholder="2019" maxlength="4">
+              </div>
+              <div class="form-group">
+                <label for="make">Make</label>
+                <input type="text" id="make" name="vehicle_make" placeholder="Ford">
+              </div>
+              <div class="form-group">
+                <label for="model">Model</label>
+                <input type="text" id="model" name="vehicle_model" placeholder="F-150">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="service">Service Needed <span class="req">*</span></label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Select a service…</option>
+                <option>Oil Change</option>
+                <option>Brake Repair</option>
+                <option>Check Engine Light / Diagnostics</option>
+                <option>Engine Repair</option>
+                <option>AC Repair</option>
+                <option>Tire Service</option>
+                <option>Suspension / Shocks / Struts</option>
+                <option>Battery Service</option>
+                <option>Electrical</option>
+                <option>Tune-Up</option>
+                <option>General Maintenance</option>
+                <option>Towing</option>
+                <option>Other / Not Sure</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="date">Preferred Date</label>
+              <input type="date" id="date" name="preferred_date">
+            </div>
+            <div class="form-group">
+              <label for="message">Describe the Issue <span class="optional">(optional)</span></label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us what's going on with your vehicle…"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full btn-lg" id="submitBtn">
+              <i class="fas fa-calendar-check"></i> Request Appointment
+            </button>
+            <p class="form-note"><i class="fas fa-lock"></i> We'll confirm within one business day. Your info is never shared.</p>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <div class="success-icon"><i class="fas fa-circle-check"></i></div>
+            <h3>Appointment Request Sent!</h3>
+            <p>Thank you! We'll contact you within one business day to confirm your appointment time.</p>
+            <a href="tel:8643289169" class="btn btn-primary">
+              <i class="fas fa-phone"></i> Call Us: 864-328-9169
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       REVIEWS
+  ============================================================ -->
+  <section class="reviews section" id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Customer Reviews</span>
+        <h2 class="section-title">What Our Customers Say</h2>
+        <div class="overall-rating">
+          <span class="rating-num">4.9</span>
+          <div class="stars-row">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <span class="rating-count">Based on 49 Google Reviews</span>
+        </div>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card fade-in">
+          <div class="review-top">
+            <div class="review-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <i class="fab fa-google review-google"></i>
+          </div>
+          <p>"Chris is the most honest mechanic I've ever dealt with. He diagnosed my truck in 20 minutes, gave me a fair price, and had it done the same afternoon. I won't take my vehicles anywhere else."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">M</div>
+            <div>
+              <strong>Michael T.</strong>
+              <span>Anderson, SC</span>
+            </div>
+          </div>
+        </div>
+        <div class="review-card fade-in">
+          <div class="review-top">
+            <div class="review-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <i class="fab fa-google review-google"></i>
+          </div>
+          <p>"Took my car in for AC issues and they had it blowing cold by noon. Great price, zero runaround, and they explained everything clearly. This is the kind of shop you tell your whole family about."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">S</div>
+            <div>
+              <strong>Sarah K.</strong>
+              <span>Anderson, SC</span>
+            </div>
+          </div>
+        </div>
+        <div class="review-card fade-in">
+          <div class="review-top">
+            <div class="review-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <i class="fab fa-google review-google"></i>
+          </div>
+          <p>"As a veteran, it means a lot when a business genuinely gives back. Palmetto State gave me the military discount without me even asking. And the work was excellent. Highly, highly recommended."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">D</div>
+            <div>
+              <strong>David R.</strong>
+              <span>Anderson, SC</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reviews-cta">
+        <a href="https://www.google.com/maps/search/Palmetto+State+Automotive+Anderson+SC" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark">
+          <i class="fab fa-google"></i> Read All Reviews on Google
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT
+  ============================================================ -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Find Us</span>
+        <h2 class="section-title">Contact &amp; Location</h2>
+      </div>
+      <div class="contact-grid">
+
+        <div class="contact-info fade-in">
+          <div class="contact-card">
+            <h3>Get In Touch</h3>
+
+            <div class="contact-detail">
+              <div class="contact-icon"><i class="fas fa-location-dot"></i></div>
+              <div>
+                <strong>Address</strong>
+                <span>2808 HWY 29 N<br>Anderson, SC 29621</span>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="contact-icon"><i class="fas fa-phone"></i></div>
+              <div>
+                <strong>Phone</strong>
+                <a href="tel:8643289169">864-328-9169</a>
+                <a href="tel:8649331950">864-933-1950 (Chris)</a>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <strong>Email</strong>
+                <a href="mailto:palmettostateautomotivellc@gmail.com">palmettostateautomotivellc@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="contact-icon"><i class="fas fa-clock"></i></div>
+              <div>
+                <strong>Hours of Operation</strong>
+                <div class="hours-table">
+                  <div class="hours-row">
+                    <span>Monday – Friday</span>
+                    <span class="hours-time open">8:00 AM – 5:00 PM</span>
+                  </div>
+                  <div class="hours-row">
+                    <span>Saturday</span>
+                    <span class="hours-time closed">Closed</span>
+                  </div>
+                  <div class="hours-row">
+                    <span>Sunday</span>
+                    <span class="hours-time closed">Closed</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <a href="tel:8643289169" class="btn btn-primary btn-full" style="margin-top:24px;">
+              <i class="fas fa-phone"></i> Call Us Now
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-map fade-in">
+          <!--
+            To get a proper embed code:
+            1. Go to maps.google.com
+            2. Search "Palmetto State Automotive Anderson SC"
+            3. Click Share > Embed a map > Copy HTML
+            4. Replace this entire iframe with that code
+          -->
+          <iframe
+            src="https://maps.google.com/maps?q=2808+HWY+29+N+Anderson+SC+29621&output=embed"
+            width="100%"
+            height="480"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Palmetto State Automotive Location Map">
+          </iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <img src="images/palmetto-logo.png" alt="Palmetto State Automotive" class="footer-logo-img" onerror="this.style.display='none'">
+          <div class="footer-brand-name">
+            <span>Palmetto State</span>
+            <span>Automotive</span>
+          </div>
+        </div>
+        <p>Honest, dependable auto repair serving Anderson, SC and surrounding communities. We strive for excellence on every vehicle we touch.</p>
+        <p class="footer-tagline">"We Strive for Excellence"</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.google.com/maps/search/Palmetto+State+Automotive+Anderson+SC" target="_blank" rel="noopener" aria-label="Google Reviews"><i class="fab fa-google"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Oil Changes</a></li>
+          <li><a href="#services">Brake Repair</a></li>
+          <li><a href="#services">Diagnostics</a></li>
+          <li><a href="#services">AC Repair</a></li>
+          <li><a href="#services">Engine Repair</a></li>
+          <li><a href="#services">Suspension</a></li>
+          <li><a href="#services">Battery Service</a></li>
+          <li><a href="#services">General Maintenance</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#reviews">Customer Reviews</a></li>
+          <li><a href="#appointment">Book Appointment</a></li>
+          <li><a href="#contact">Contact &amp; Location</a></li>
+          <li><a href="tel:8643289169">864-328-9169</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-items">
+          <div class="footer-contact-item">
+            <i class="fas fa-location-dot"></i>
+            <span>2808 HWY 29 N<br>Anderson, SC 29621</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-phone"></i>
+            <div>
+              <a href="tel:8643289169">864-328-9169</a><br>
+              <a href="tel:8649331950">864-933-1950</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:palmettostateautomotivellc@gmail.com">palmettostateautomotivellc@gmail.com</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-clock"></i>
+            <span>Mon–Fri: 8AM–5PM<br>Sat–Sun: Closed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© 2025 Palmetto State Automotive LLC. All rights reserved. | Anderson, SC</p>
+        <p class="footer-discount">
+          <i class="fas fa-star"></i> 10% Discount: Military · First Responders · Teachers
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
