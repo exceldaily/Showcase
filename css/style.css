@@ -1100,12 +1100,12 @@ input, select, textarea { font-family: var(--font); }
   .btn-nav { padding: 12px 24px; font-size: 0.95rem; }
 
   /* Hero */
-  .hero { background-attachment: scroll; justify-content: flex-start; }
-  .hero > .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .hero { background-attachment: scroll; justify-content: center; }
+  .hero > .container { max-width: 100%; margin: 0; padding: 0 20px; }
+  .hero-overlay { background: rgba(0,0,0,0.72); }
   .hero-content { padding-top: 90px; padding-bottom: 56px; width: 100%; }
-  .hero-cta { flex-direction: column; align-items: stretch; }
-  .hero-cta .btn { width: 100%; justify-content: center; }
-  .hero-stats { gap: 20px; }
+  .hero-cta-box { padding: 28px 22px; gap: 22px; }
+  .hero-stats { gap: 14px; justify-content: space-between; }
 
   /* Trust */
   .trust-grid { grid-template-columns: 1fr 1fr; }
@@ -1151,10 +1151,11 @@ input, select, textarea { font-family: var(--font); }
   .trust-grid          { grid-template-columns: 1fr; }
   .why-grid            { grid-template-columns: 1fr; }
   .form-row.three-col  { grid-template-columns: 1fr; }
-  .hero-stats          { flex-direction: column; gap: 16px; }
-  .stat-divider        { width: 48px; height: 1px; }
+  .hero-cta-box        { padding: 22px 16px; gap: 18px; }
+  .hero-stats          { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .stat-divider        { width: 100%; height: 1px; }
+  .stat-num            { font-size: 1.3rem; }
   .overall-rating      { flex-direction: column; gap: 8px; }
   .cta-content .btn    { width: 100%; }
   .appt-form-wrap      { padding: 22px 16px; }
-  .hero-title          { font-size: 2.2rem; }
 }
