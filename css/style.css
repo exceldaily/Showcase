@@ -293,9 +293,21 @@ input, select, textarea { font-family: var(--font); }
 .hero-content {
   position: relative;
   z-index: 1;
-  padding-top: 110px;
+  padding-top: 80px;
   padding-bottom: 80px;
   width: 100%;
+}
+
+.hero-cta-box {
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 .hero-badge {
@@ -335,10 +347,11 @@ input, select, textarea { font-family: var(--font); }
 
 .hero-cta {
   display: flex;
+  flex-direction: column;
   gap: 14px;
-  flex-wrap: wrap;
-  margin-bottom: 64px;
 }
+
+.hero-cta .btn { width: 100%; justify-content: center; }
 
 .hero-stats {
   display: flex;
