@@ -272,9 +272,10 @@ input, select, textarea { font-family: var(--font); }
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    115deg,
-    rgba(0,0,0,0.55)  0%,
-    rgba(5,0,0,0.35)  100%
+    105deg,
+    rgba(0,0,0,0.88) 0%,
+    rgba(0,0,0,0.80) 50%,
+    rgba(0,0,0,0.65) 100%
   );
 }
 
@@ -1074,7 +1075,10 @@ input, select, textarea { font-family: var(--font); }
   .btn-nav { padding: 12px 24px; font-size: 0.95rem; }
 
   /* Hero */
-  .hero-cta { flex-direction: column; align-items: flex-start; }
+  .hero { background-attachment: scroll; }
+  .hero-content { padding-top: 90px; padding-bottom: 56px; }
+  .hero-cta { flex-direction: column; align-items: stretch; }
+  .hero-cta .btn { width: 100%; justify-content: center; }
   .hero-stats { gap: 20px; }
 
   /* Trust */
@@ -1088,7 +1092,7 @@ input, select, textarea { font-family: var(--font); }
   .cta-text     { flex-direction: column; align-items: center; text-align: center; }
 
   /* Why */
-  .why-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr 1fr; }
 
   /* Reviews */
   .reviews-grid { grid-template-columns: 1fr; }
@@ -1105,18 +1109,26 @@ input, select, textarea { font-family: var(--font); }
   .form-row.two-col     { grid-template-columns: 1fr; }
   .form-row.three-col   { grid-template-columns: 1fr 1fr; }
 
-  /* About float card reposition */
+  /* About */
   .about-float-card { position: static; margin-top: 16px; display: inline-flex; border-radius: var(--radius); }
+  .about-img-wrap img { height: 320px; }
+
+  /* Contact */
+  .contact-card { padding: 28px 22px; }
 }
 
 /* ============================================================
    RESPONSIVE — Small (≤480px)
    ============================================================ */
 @media (max-width: 480px) {
+  .section             { padding: 56px 0; }
   .trust-grid          { grid-template-columns: 1fr; }
+  .why-grid            { grid-template-columns: 1fr; }
   .form-row.three-col  { grid-template-columns: 1fr; }
   .hero-stats          { flex-direction: column; gap: 16px; }
   .stat-divider        { width: 48px; height: 1px; }
   .overall-rating      { flex-direction: column; gap: 8px; }
   .cta-content .btn    { width: 100%; }
+  .appt-form-wrap      { padding: 22px 16px; }
+  .hero-title          { font-size: 2.2rem; }
 }
