@@ -259,6 +259,7 @@ input, select, textarea { font-family: var(--font); }
   min-height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   position: relative;
   overflow: hidden;
   background-color: #0b0b0b;
@@ -268,15 +269,24 @@ input, select, textarea { font-family: var(--font); }
   background-attachment: fixed;
 }
 
+/* Override the global .container centering inside hero only */
+.hero > .container {
+  max-width: 560px;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0 48px 0 32px;
+}
+
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(0,0,0,0.42) 0%,
-    rgba(0,0,0,0.48) 52%,
-    rgba(0,0,0,0.86) 62%,
-    rgba(0,0,0,0.92) 100%
+    rgba(0,0,0,0.38) 0%,
+    rgba(0,0,0,0.44) 48%,
+    rgba(0,0,0,0.88) 60%,
+    rgba(0,0,0,0.94) 100%
   );
 }
 
@@ -285,8 +295,7 @@ input, select, textarea { font-family: var(--font); }
   z-index: 1;
   padding-top: 110px;
   padding-bottom: 80px;
-  width: 38%;
-  margin-left: auto;
+  width: 100%;
 }
 
 .hero-badge {
@@ -1078,8 +1087,9 @@ input, select, textarea { font-family: var(--font); }
   .btn-nav { padding: 12px 24px; font-size: 0.95rem; }
 
   /* Hero */
-  .hero { background-attachment: scroll; }
-  .hero-content { padding-top: 90px; padding-bottom: 56px; width: 100%; margin-left: 0; }
+  .hero { background-attachment: scroll; justify-content: flex-start; }
+  .hero > .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .hero-content { padding-top: 90px; padding-bottom: 56px; width: 100%; }
   .hero-cta { flex-direction: column; align-items: stretch; }
   .hero-cta .btn { width: 100%; justify-content: center; }
   .hero-stats { gap: 20px; }
