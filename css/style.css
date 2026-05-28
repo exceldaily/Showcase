@@ -30,6 +30,7 @@
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
+html.menu-open { overflow: hidden; }
 body {
   font-family: var(--font);
   color: var(--text);
@@ -242,16 +243,17 @@ input, select, textarea { font-family: var(--font); }
 
 /* Mobile overlay */
 .nav-overlay {
-  display: none;
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.5);
   z-index: 998;
+  visibility: hidden;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s, visibility 0.3s;
 }
 .nav-overlay.show {
+  visibility: visible;
   opacity: 1;
   pointer-events: auto;
 }
@@ -664,7 +666,7 @@ input, select, textarea { font-family: var(--font); }
 /* ============================================================
    APPOINTMENT
    ============================================================ */
-.appointment { background: var(--lighter); }
+.appointment { background: var(--lighter); position: relative; z-index: 1; }
 
 .appt-grid {
   display: grid;
@@ -1099,7 +1101,6 @@ input, select, textarea { font-family: var(--font); }
     box-shadow: -8px 0 40px rgba(0,0,0,0.4);
   }
   .nav-links.open { right: 0; }
-  .nav-overlay   { display: block; }
   .nav-links > li > a { font-size: 1.05rem; }
   .btn-nav { padding: 12px 24px; font-size: 0.95rem; }
 

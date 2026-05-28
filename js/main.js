@@ -29,14 +29,14 @@
     hamburger.classList.add('active');
     navLinks.classList.add('open');
     navOverlay.classList.add('show');
-    document.body.style.overflow = 'hidden';
+    document.documentElement.classList.add('menu-open');
   }
 
   function closeMenu() {
     hamburger.classList.remove('active');
     navLinks.classList.remove('open');
     navOverlay.classList.remove('show');
-    document.body.style.overflow = '';
+    document.documentElement.classList.remove('menu-open');
   }
 
   hamburger.addEventListener('click', () => {
