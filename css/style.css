@@ -248,9 +248,13 @@ input, select, textarea { font-family: var(--font); }
   background: rgba(0,0,0,0.5);
   z-index: 998;
   opacity: 0;
+  pointer-events: none;
   transition: opacity 0.3s;
 }
-.nav-overlay.show { opacity: 1; }
+.nav-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
 
 /* ============================================================
    HERO
