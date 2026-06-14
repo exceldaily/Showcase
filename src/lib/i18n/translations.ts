@@ -29,6 +29,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'review.empty': 'Extracted rows will appear here.',
     'error.noPdf': 'Upload at least one PDF or image first.',
     'error.tooLarge': 'Files are too large for direct Vercel upload. Try smaller/compressed files for now.',
+    'currency.baht': 'Baht',
   },
   th: {
     'header.title': 'ตัวแยกข้อมูลใบเสร็จ',
@@ -58,6 +59,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'review.empty': 'แถวที่แยกออกมาจะปรากฏที่นี่',
     'error.noPdf': 'อัปโหลดอย่างน้อย PDF หรือรูปภาพหนึ่งรูปก่อน',
     'error.tooLarge': 'ไฟล์มีขนาดใหญ่เกินไป ให้ลองใช้ไฟล์ที่เล็กกว่าหรือบีบอัด',
+    'currency.baht': 'บาท',
   },
 }
 

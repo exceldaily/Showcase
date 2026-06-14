@@ -13,6 +13,7 @@ import {
 } from 'lucide-react'
 import { DEFAULT_FORMATTING, type DataType, type ExtractedRow, type ExtractionTemplate, type FieldRole, type FieldSource, type TemplateColumn } from '@/lib/types'
 import { useLanguage } from '@/lib/i18n/context'
+import { useCurrency, CURRENCY_SYMBOLS, CURRENCY_NAMES } from '@/lib/i18n/currency'
 import { t } from '@/lib/i18n/translations'
 
 const MAX_DIRECT_UPLOAD_BYTES = 4 * 1024 * 1024
@@ -172,6 +173,7 @@ async function responseError(response: Response, fallback: string) {
 
 export function InvoiceWorkspace() {
   const { language, setLanguage } = useLanguage()
+  const { currency, setCurrency } = useCurrency()
   const [pdfs, setPdfs] = useState<File[]>([])
   const [pdfInputKey, setPdfInputKey] = useState(0)
   const [workbook, setWorkbook] = useState<File | null>(null)
@@ -347,6 +349,34 @@ export function InvoiceWorkspace() {
               >
                 <span className="text-base">🇹🇭</span>
                 ไทย
+              </button>
+            </div>
+            <div className="inline-flex gap-2 rounded-lg border border-primary/20 bg-primary/5 p-1">
+              <button
+                type="button"
+                onClick={() => setCurrency('usd')}
+                title="USD"
+                className={`flex items-center gap-2 rounded-md px-3 py-2 text-sm font-semibold transition ${
+                  currency === 'usd'
+                    ? 'bg-primary text-primary-foreground shadow-sm'
+                    : 'text-foreground hover:bg-primary/10'
+                }`}
+              >
+                <span className="text-base">💵</span>
+                USD
+              </button>
+              <button
+                type="button"
+                onClick={() => setCurrency('thb')}
+                title="Thai Baht"
+                className={`flex items-center gap-2 rounded-md px-3 py-2 text-sm font-semibold transition ${
+                  currency === 'thb'
+                    ? 'bg-primary text-primary-foreground shadow-sm'
+                    : 'text-foreground hover:bg-primary/10'
+                }`}
+              >
+                <span className="text-base">฿</span>
+                {t(language, 'currency.baht')}
               </button>
             </div>
             <button
