@@ -239,7 +239,6 @@ export function InvoiceWorkspace() {
     try {
       const form = new FormData()
       form.append('template', JSON.stringify(template))
-      form.append('provider', 'claude')
       pdfs.forEach((file) => form.append('pdfs', file))
       const response = await fetch('/api/extract', { method: 'POST', body: form })
       if (!response.ok) throw new Error(await responseError(response, 'Extraction failed'))
