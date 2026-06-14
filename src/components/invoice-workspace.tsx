@@ -321,27 +321,31 @@ export function InvoiceWorkspace() {
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <div className="inline-flex rounded-lg border">
+            <div className="inline-flex gap-2 rounded-lg border border-primary/20 bg-primary/5 p-1">
               <button
                 type="button"
                 onClick={() => setLanguage('en')}
-                className={`px-3 py-2 text-sm font-medium transition ${
+                title="English"
+                className={`flex items-center gap-2 rounded-md px-3 py-2 text-sm font-semibold transition ${
                   language === 'en'
-                    ? 'bg-primary text-primary-foreground'
-                    : 'text-muted hover:text-foreground'
+                    ? 'bg-primary text-primary-foreground shadow-sm'
+                    : 'text-foreground hover:bg-primary/10'
                 }`}
               >
+                <span className="text-base">🇺🇸</span>
                 English
               </button>
               <button
                 type="button"
                 onClick={() => setLanguage('th')}
-                className={`px-3 py-2 text-sm font-medium transition ${
+                title="ไทย"
+                className={`flex items-center gap-2 rounded-md px-3 py-2 text-sm font-semibold transition ${
                   language === 'th'
-                    ? 'bg-primary text-primary-foreground'
-                    : 'text-muted hover:text-foreground'
+                    ? 'bg-primary text-primary-foreground shadow-sm'
+                    : 'text-foreground hover:bg-primary/10'
                 }`}
               >
+                <span className="text-base">🇹🇭</span>
                 ไทย
               </button>
             </div>
