@@ -24,7 +24,7 @@ export class TesseractProvider implements ExtractionProvider {
     try {
       const rows: RawRow[] = []
       for (const page of pages) {
-        const buffer = Buffer.from(page.pngBase64, 'base64')
+        const buffer = Buffer.from(page.imageBase64, 'base64')
         const { data } = await worker.recognize(buffer)
         const text = data.text || ''
         const baseConf = Math.max(0, Math.min(1, (data.confidence ?? 50) / 100)) * 0.8

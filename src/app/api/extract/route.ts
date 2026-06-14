@@ -4,6 +4,7 @@ import { getProvider } from '@/lib/extraction/provider'
 import type { ExtractionProviderName } from '@/lib/config'
 import { rowsFromRaw } from '@/lib/extraction/pipeline'
 import { renderPdfToImages } from '@/lib/pdf/render'
+import { handleImageFile } from '@/lib/image/handle'
 
 export const runtime = 'nodejs'
 export const maxDuration = 60
@@ -24,11 +25,18 @@ export async function POST(request: Request) {
     const files = form.getAll('pdfs').filter((value): value is File => value instanceof File)
 
     if (!files.length) {
-      return NextResponse.json({ error: 'Upload at least one PDF' }, { status: 400 })
+      return NextResponse.json({ error: 'Upload at least one PDF or image' }, { status: 400 })
     }
 
     const rendered = (
-      await Promise.all(files.map((file) => renderPdfToImages(file, { maxPages: 20 })))
+      await Promise.all(
+        files.map(async (file) => {
+          const isPdf = file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf')
+          return isPdf
+            ? renderPdfToImages(file, { maxPages: 20 })
+            : handleImageFile(file)
+        })
+      )
     ).flat()
     const rawRows = await provider.extract(rendered, {
       columns: template.columns,

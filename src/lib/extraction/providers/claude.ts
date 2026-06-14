@@ -98,7 +98,7 @@ One object in "rows" per distinct invoice/receipt on the page (usually one).`
             content: [
               {
                 type: 'image',
-                source: { type: 'base64', media_type: 'image/png', data: page.pngBase64 },
+                source: { type: 'base64', media_type: page.mediaType, data: page.imageBase64 },
               },
               { type: 'text', text: prompt },
             ],

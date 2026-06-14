@@ -9,8 +9,11 @@ import {
   Loader2,
   Trash2,
   Upload,
+  Globe,
 } from 'lucide-react'
 import { DEFAULT_FORMATTING, type DataType, type ExtractedRow, type ExtractionTemplate, type FieldRole, type FieldSource, type TemplateColumn } from '@/lib/types'
+import { useLanguage } from '@/lib/i18n/context'
+import { t } from '@/lib/i18n/translations'
 
 const MAX_DIRECT_UPLOAD_BYTES = 4 * 1024 * 1024
 
@@ -168,6 +171,7 @@ async function responseError(response: Response, fallback: string) {
 }
 
 export function InvoiceWorkspace() {
+  const { language, setLanguage } = useLanguage()
   const [pdfs, setPdfs] = useState<File[]>([])
   const [pdfInputKey, setPdfInputKey] = useState(0)
   const [workbook, setWorkbook] = useState<File | null>(null)
@@ -220,11 +224,11 @@ export function InvoiceWorkspace() {
 
   async function runExtraction() {
     if (!pdfs.length) {
-      setError('Upload at least one PDF first.')
+      setError(t(language, 'error.noPdf'))
       return
     }
     if (uploadTooLarge) {
-      setError('That PDF is too large for direct Vercel upload. Try a smaller/compressed PDF for now.')
+      setError(t(language, 'error.tooLarge'))
       return
     }
 
@@ -312,39 +316,65 @@ export function InvoiceWorkspace() {
               <FileSpreadsheet size={21} />
             </span>
             <div>
-              <div className="text-lg font-bold">Invoice Extractor</div>
-              <div className="text-xs text-muted">Upload PDF, name columns, export Excel</div>
+              <div className="text-lg font-bold">{t(language, 'header.title')}</div>
+              <div className="text-xs text-muted">{t(language, 'header.subtitle')}</div>
             </div>
           </div>
-          <button
-            type="button"
-            onClick={exportRows}
-            disabled={!rows.length || busy !== null}
-            className="inline-flex h-10 items-center gap-2 whitespace-nowrap rounded-lg bg-primary px-3 text-sm font-semibold text-primary-foreground disabled:cursor-not-allowed disabled:opacity-45 sm:px-4"
-          >
-            {busy === 'export' ? <Loader2 className="animate-spin" size={17} /> : <Download size={17} />}
-            Export
-          </button>
+          <div className="flex items-center gap-3">
+            <div className="inline-flex rounded-lg border">
+              <button
+                type="button"
+                onClick={() => setLanguage('en')}
+                className={`px-3 py-2 text-sm font-medium transition ${
+                  language === 'en'
+                    ? 'bg-primary text-primary-foreground'
+                    : 'text-muted hover:text-foreground'
+                }`}
+              >
+                English
+              </button>
+              <button
+                type="button"
+                onClick={() => setLanguage('th')}
+                className={`px-3 py-2 text-sm font-medium transition ${
+                  language === 'th'
+                    ? 'bg-primary text-primary-foreground'
+                    : 'text-muted hover:text-foreground'
+                }`}
+              >
+                ไทย
+              </button>
+            </div>
+            <button
+              type="button"
+              onClick={exportRows}
+              disabled={!rows.length || busy !== null}
+              className="inline-flex h-10 items-center gap-2 whitespace-nowrap rounded-lg bg-primary px-3 text-sm font-semibold text-primary-foreground disabled:cursor-not-allowed disabled:opacity-45 sm:px-4"
+            >
+              {busy === 'export' ? <Loader2 className="animate-spin" size={17} /> : <Download size={17} />}
+              {t(language, 'header.export')}
+            </button>
+          </div>
         </div>
       </header>
 
       <div className="mx-auto max-w-6xl space-y-5 px-4 py-6 sm:px-6">
         <section className="rounded-xl border bg-card p-5">
           <div className="max-w-3xl">
-            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Make a spreadsheet from PDFs.</h1>
+            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{t(language, 'hero.title')}</h1>
             <p className="mt-2 text-sm leading-6 text-muted">
-              Upload invoices or receipts, choose the columns you want, then review the extracted rows before downloading Excel.
+              {t(language, 'hero.description')}
             </p>
           </div>
         </section>
 
         <section className="grid gap-4 lg:grid-cols-3">
-          <StepCard number="1" title="Upload">
+          <StepCard number="1" title={t(language, 'step.upload')}>
             <FilePicker
               inputKey={pdfInputKey}
-              label="Upload PDF"
-              detail={pdfs.length ? `${pdfs.length} PDF selected` : 'Choose one or more PDF files'}
-              accept="application/pdf"
+              label={t(language, 'upload.label')}
+              detail={pdfs.length ? `${pdfs.length} ${t(language, 'upload.detail.selected')}` : t(language, 'upload.detail')}
+              accept="application/pdf,.jpg,.jpeg,.png,image/jpeg,image/png"
               multiple
               onChange={onPdfChange}
             />
@@ -381,9 +411,9 @@ export function InvoiceWorkspace() {
             ) : null}
           </StepCard>
 
-          <StepCard number="2" title="Choose columns">
+          <StepCard number="2" title={t(language, 'step.choose')}>
             <label className="block">
-              <span className="text-sm font-semibold">How many columns?</span>
+              <span className="text-sm font-semibold">{t(language, 'columns.count')}</span>
               <input
                 type="number"
                 min={1}
@@ -400,18 +430,18 @@ export function InvoiceWorkspace() {
                   className="h-10 w-full rounded-lg border bg-background px-3 text-sm"
                   value={title}
                   onChange={(event) => updateTitle(index, event.target.value)}
-                  placeholder={`Column ${index + 1} title`}
+                  placeholder={t(language, 'columns.placeholder')}
                 />
               ))}
             </div>
           </StepCard>
 
-          <StepCard number="3" title="Extract rows">
+          <StepCard number="3" title={t(language, 'step.extract')}>
             <div className="rounded-lg border bg-background p-4">
-              <div className="text-xs font-semibold uppercase tracking-wide text-muted">Ready columns</div>
+              <div className="text-xs font-semibold uppercase tracking-wide text-muted">{t(language, 'extract.ready')}</div>
               <div className="mt-1 text-3xl font-bold">{template.columns.length}</div>
               <div className="mt-3 text-xs text-muted">
-                The extractor will only return values for the column titles you entered.
+                {t(language, 'extract.note')}
               </div>
             </div>
             <button
@@ -421,7 +451,7 @@ export function InvoiceWorkspace() {
               className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-foreground text-sm font-semibold text-background disabled:cursor-not-allowed disabled:opacity-45"
             >
               {busy === 'extract' ? <Loader2 className="animate-spin" size={18} /> : <Upload size={18} />}
-              Extract rows
+              {t(language, 'extract.button')}
             </button>
           </StepCard>
         </section>
@@ -433,7 +463,13 @@ export function InvoiceWorkspace() {
           </div>
         ) : null}
 
-        <ReviewTable template={template} rows={rows} onCellChange={updateCell} onDeleteRow={deleteRow} />
+        <ReviewTable
+          language={language}
+          template={template}
+          rows={rows}
+          onCellChange={updateCell}
+          onDeleteRow={deleteRow}
+        />
       </div>
     </main>
   )
@@ -489,11 +525,13 @@ function FilePicker({
 }
 
 function ReviewTable({
+  language,
   template,
   rows,
   onCellChange,
   onDeleteRow,
 }: {
+  language: 'en' | 'th'
   template: ExtractionTemplate
   rows: ExtractedRow[]
   onCellChange: (rowId: string, columnId: string, value: string) => void
@@ -503,23 +541,25 @@ function ReviewTable({
     <div className="overflow-hidden rounded-xl border bg-card">
       <div className="flex flex-col gap-3 border-b p-5 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h2 className="text-lg font-semibold">Review rows</h2>
-          <p className="text-sm text-muted">Edit any value before exporting.</p>
+          <h2 className="text-lg font-semibold">{t(language, 'review.title')}</h2>
+          <p className="text-sm text-muted">{t(language, 'review.note')}</p>
         </div>
-        <div className="text-sm text-muted">{rows.length} row(s)</div>
+        <div className="text-sm text-muted">
+          {rows.length} {t(language, 'review.rows')}
+        </div>
       </div>
       <div className="overflow-x-auto">
         <table className="min-w-full border-separate border-spacing-0 text-left text-sm">
           <thead className="bg-background text-xs uppercase text-muted">
             <tr>
-              <th className="sticky left-0 z-10 min-w-48 border-b bg-background px-3 py-3">Source</th>
-              <th className="min-w-16 border-b px-3 py-3">Page</th>
+              <th className="sticky left-0 z-10 min-w-48 border-b bg-background px-3 py-3">{t(language, 'review.source')}</th>
+              <th className="min-w-16 border-b px-3 py-3">{t(language, 'review.page')}</th>
               {template.columns.map((column) => (
                 <th key={column.id} className="min-w-56 border-b px-3 py-3">
                   {column.name}
                 </th>
               ))}
-              <th className="min-w-64 border-b px-3 py-3">Status</th>
+              <th className="min-w-64 border-b px-3 py-3">{t(language, 'review.status')}</th>
               <th className="w-16 border-b px-3 py-3"></th>
             </tr>
           </thead>
@@ -578,7 +618,7 @@ function ReviewTable({
             ) : (
               <tr>
                 <td colSpan={template.columns.length + 4} className="px-5 py-12 text-center text-muted">
-                  Extracted rows will appear here.
+                  {t(language, 'review.empty')}
                 </td>
               </tr>
             )}

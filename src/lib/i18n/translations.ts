@@ -1,0 +1,66 @@
+export type Language = 'en' | 'th'
+
+export const translations: Record<Language, Record<string, string>> = {
+  en: {
+    'header.title': 'Invoice Extractor',
+    'header.subtitle': 'Upload PDF, name columns, export Excel',
+    'header.export': 'Export',
+    'hero.title': 'Make a spreadsheet from PDFs.',
+    'hero.description':
+      'Upload invoices or receipts, choose the columns you want, then review the extracted rows before downloading Excel.',
+    'step.upload': 'Upload',
+    'step.choose': 'Choose columns',
+    'step.extract': 'Extract rows',
+    'upload.label': 'Upload PDF or Images',
+    'upload.detail': 'Choose PDF or JPEG files',
+    'upload.detail.selected': 'file(s) selected',
+    'upload.queue': 'Queued size',
+    'columns.count': 'How many columns?',
+    'columns.placeholder': 'Column title',
+    'extract.ready': 'Ready columns',
+    'extract.note': 'The extractor will only return values for the column titles you entered.',
+    'extract.button': 'Extract rows',
+    'review.title': 'Review rows',
+    'review.note': 'Edit any value before exporting.',
+    'review.rows': 'row(s)',
+    'review.source': 'Source',
+    'review.page': 'Page',
+    'review.status': 'Status',
+    'review.empty': 'Extracted rows will appear here.',
+    'error.noPdf': 'Upload at least one PDF or image first.',
+    'error.tooLarge': 'Files are too large for direct Vercel upload. Try smaller/compressed files for now.',
+  },
+  th: {
+    'header.title': 'ตัวแยกข้อมูลใบเสร็จ',
+    'header.subtitle': 'อัปโหลด PDF เลือกคอลัมน์ ส่งออก Excel',
+    'header.export': 'ส่งออก',
+    'hero.title': 'สร้างสเปรดชีตจาก PDF',
+    'hero.description':
+      'อัปโหลดใบแจ้งหนี้หรือใบเสร็จ เลือกคอลัมน์ที่ต้องการ จากนั้นตรวจสอบแถวที่แยกออกมาก่อนดาวน์โหลด Excel',
+    'step.upload': 'อัปโหลด',
+    'step.choose': 'เลือกคอลัมน์',
+    'step.extract': 'แยกแถว',
+    'upload.label': 'อัปโหลด PDF หรือรูปภาพ',
+    'upload.detail': 'เลือกไฟล์ PDF หรือ JPEG',
+    'upload.detail.selected': 'ไฟล์ที่เลือก',
+    'upload.queue': 'ขนาดรวม',
+    'columns.count': 'จำนวนคอลัมน์เท่าใด',
+    'columns.placeholder': 'ชื่อคอลัมน์',
+    'extract.ready': 'คอลัมน์พร้อม',
+    'extract.note': 'ตัวแยกจะส่งกลับค่าสำหรับชื่อคอลัมน์ที่คุณป้อนเท่านั้น',
+    'extract.button': 'แยกแถว',
+    'review.title': 'ตรวจสอบแถว',
+    'review.note': 'แก้ไขค่าใดๆ ก่อนส่งออก',
+    'review.rows': 'แถว',
+    'review.source': 'แหล่งที่มา',
+    'review.page': 'หน้า',
+    'review.status': 'สถานะ',
+    'review.empty': 'แถวที่แยกออกมาจะปรากฏที่นี่',
+    'error.noPdf': 'อัปโหลดอย่างน้อย PDF หรือรูปภาพหนึ่งรูปก่อน',
+    'error.tooLarge': 'ไฟล์มีขนาดใหญ่เกินไป ให้ลองใช้ไฟล์ที่เล็กกว่าหรือบีบอัด',
+  },
+}
+
+export function t(lang: Language, key: string): string {
+  return translations[lang]?.[key] ?? key
+}

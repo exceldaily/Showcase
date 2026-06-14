@@ -63,7 +63,8 @@ export async function renderPdfToImages(
     pages.push({
       sourceFile: file.name,
       pageNumber,
-      pngBase64: png.toString('base64'),
+      imageBase64: png.toString('base64'),
+      mediaType: 'image/png',
       width: Math.round(viewport.width),
       height: Math.round(viewport.height),
       rotation: page.rotate ?? 0,

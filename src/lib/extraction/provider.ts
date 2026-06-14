@@ -1,12 +1,14 @@
 import type { FieldSource, FormattingPrefs, TemplateColumn } from '../types'
 import { activeProvider, type ExtractionProviderName } from '../config'
 
-/** A rendered PDF page handed to a vision/OCR provider. */
+/** A rendered PDF page or uploaded image handed to a vision/OCR provider. */
 export interface PageImage {
   sourceFile: string
   pageNumber: number
-  /** PNG bytes, base64-encoded (no data: prefix). */
-  pngBase64: string
+  /** Image bytes, base64-encoded (no data: prefix). PNG or JPEG. */
+  imageBase64: string
+  /** Media type: 'image/png' or 'image/jpeg'. */
+  mediaType: 'image/png' | 'image/jpeg'
   width: number
   height: number
   /** Rotation already applied during render, in degrees. */
